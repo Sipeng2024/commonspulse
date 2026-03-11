@@ -1,0 +1,13 @@
+projects:
+  - name: Vyper
+    homepage: https://vyperlang.org/
+    github_repo: vyperlang/vyper
+    tags: [language, smart-contracts]
+  - name: Python
+    homepage: https://www.python.org/
+    github_repo: python/cpython
+    tags: [language, ecosystem]
+  - name: uv
+    homepage: https://docs.astral.sh/uv/
+    github_repo: astral-sh/uv
+    tags: [tooling, packaging]

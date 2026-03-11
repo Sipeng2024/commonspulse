@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-03-11T09:17:23.020041+00:00",
+  "project_count": 3,
+  "portfolio_health": {
+    "strong": 4,
+    "weak": 3,
+    "medium": 1,
+    "unknown": 1
+  },
+  "projects": [
+    {
+      "name": "Vyper",
+      "homepage": "https://vyperlang.org/",
+      "github_repo": "vyperlang/vyper",
+      "tags": [
+        "language",
+        "smart-contracts"
+      ],
+      "evidence": {
+        "stars": 5172,
+        "forks": 884,
+        "open_issues": 590,
+        "latest_commit_at": "2026-03-09T19:22:21Z",
+        "latest_release_at": "2025-06-18T20:09:23Z",
+        "default_branch": "master",
+        "repo_url": "https://github.com/vyperlang/vyper",
+        "description": "Pythonic Smart Contract Language for the EVM"
+      },
+      "signals": {
+        "development": "strong",
+        "release_cadence": "weak",
+        "maintainability": "medium"
+      },
+      "summary": "Vyper shows strong signal in development but weak signal in release_cadence and may require triage bandwidth."
+    },
+    {
+      "name": "Python",
+      "homepage": "https://www.python.org/",
+      "github_repo": "python/cpython",
+      "tags": [
+        "language",
+        "ecosystem"
+      ],
+      "evidence": {
+        "stars": 71987,
+        "forks": 34210,
+        "open_issues": 9288,
+        "latest_commit_at": "2026-03-11T08:02:23Z",
+        "latest_release_at": null,
+        "default_branch": "main",
+        "repo_url": "https://github.com/python/cpython",
+        "description": "The Python programming language"
+      },
+      "signals": {
+        "development": "strong",
+        "release_cadence": "unknown",
+        "maintainability": "weak"
+      },
+      "summary": "Python shows strong signal in development but weak signal in maintainability and may require triage bandwidth."
+    },
+    {
+      "name": "uv",
+      "homepage": "https://docs.astral.sh/uv/",
+      "github_repo": "astral-sh/uv",
+      "tags": [
+        "tooling",
+        "packaging"
+      ],
+      "evidence": {
+        "stars": 80701,
+        "forks": 2662,
+        "open_issues": 2705,
+        "latest_commit_at": "2026-03-10T19:02:18Z",
+        "latest_release_at": "2026-03-06T21:24:15Z",
+        "default_branch": "main",
+        "repo_url": "https://github.com/astral-sh/uv",
+        "description": "An extremely fast Python package and project manager, written in Rust."
+      },
+      "signals": {
+        "development": "strong",
+        "release_cadence": "strong",
+        "maintainability": "weak"
+      },
+      "summary": "uv shows strong signal in development, release_cadence but weak signal in maintainability and may require triage bandwidth."
+    }
+  ]
+}
