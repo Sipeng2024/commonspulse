@@ -34,6 +34,55 @@ Current MVP monitors:
 
 It outputs a per-project snapshot plus portfolio-level health counts.
 
+## Snapshot schema
+
+Each project snapshot is shaped as an upstream evidence object, not just a loose report blob:
+
+```json
+{
+  "name": "Vyper",
+  "sources": [
+    {"kind": "github_repo", "url": "https://github.com/vyperlang/vyper", "fetched_at": "2026-03-11T09:00:00Z"}
+  ],
+  "evidence": {
+    "repo": {
+      "repo_url": "https://github.com/vyperlang/vyper",
+      "open_issues": 590
+    },
+    "latest_commit": {
+      "timestamp": "2026-03-09T19:22:21Z",
+      "url": "https://github.com/vyperlang/vyper/commit/...",
+      "days_since": 2
+    }
+  },
+  "derived_signals": {
+    "development": {
+      "level": "strong",
+      "rationale": "Latest commit was 2 days ago.",
+      "source_refs": ["https://github.com/vyperlang/vyper/commit/..."],
+      "threshold": {"strong_lte_days": 14, "medium_lte_days": 45}
+    }
+  },
+  "downstream_use": [
+    "portfolio_monitoring",
+    "dashboard_ingestion",
+    "review_workbench_input"
+  ]
+}
+```
+
+That schema is the point: CommonsPulse is meant to emit reusable, traceable upstream snapshots that downstream dashboards or review tools can consume.
+
+## Thresholds
+
+Current MVP thresholds are intentionally simple and explicit:
+
+- `development`: strong if latest commit <= 14 days, medium if <= 45 days, else weak
+- `release_cadence`: strong if latest release <= 60 days, medium if <= 180 days, else weak
+- `maintainability`: weak if open issues > 1000, otherwise medium
+
+These are starter heuristics, not grant decisions. They are documented so the project reads like infrastructure, not a mystery scoring box.
+
 ## Quick start
 
 ```bash
@@ -47,6 +96,8 @@ Generated files:
 
 - `output/report.md`
 - `output/report.json`
+
+The JSON output is the canonical machine-readable artifact. The markdown report is just a human-friendly projection of the same snapshot.
 
 Example project config:
 
