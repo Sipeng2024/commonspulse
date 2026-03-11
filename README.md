@@ -4,9 +4,9 @@
 
 Instead of waiting for quarterly manual updates, CommonsPulse continuously pulls public project signals (GitHub activity, releases, issue load) and turns them into:
 
-- a compact markdown report for humans
+- a compact markdown report for operators
 - a JSON snapshot for downstream automation
-- explicit weak/medium/strong signals for human review
+- explicit weak/medium/strong signals for upstream portfolio monitoring
 
 ## Why this exists
 
@@ -17,9 +17,9 @@ Grant operators usually face the same problem:
 - problems are discovered late
 - communities cannot easily verify whether a project is still progressing
 
-CommonsPulse does **not** auto-score grants or auto-trigger payments. It focuses on one narrower job:
+CommonsPulse does **not** auto-score grants, auto-trigger payments, or act as a reviewer workbench. It focuses on one narrower upstream job:
 
-> Collect public evidence, summarize progress, and flag projects that deserve human attention.
+> Collect public evidence, normalize project signals, and emit reusable portfolio snapshots.
 
 That makes it safer, more auditable, and more reusable across different funding programs.
 
@@ -59,22 +59,22 @@ projects:
 
 ## Roadmap
 
-- map project evidence to explicit grant milestones
 - add RSS/blog/X/website change detection
-- publish GitHub Issue comments automatically for review teams
-- expose a small dashboard for fund operators
-- support human override + confidence explanations
+- add richer evidence schemas for portfolio events
+- publish machine-readable snapshots for downstream tools
+- expose a lightweight monitoring dashboard
+- support configurable thresholds by project type
 
 ## Why this fits GCC
 
 GCC explicitly identified impact evaluation as a real pain point: portfolio tracking is repetitive, high-friction, and often delayed.
 
-CommonsPulse turns that into an open workflow:
+CommonsPulse turns that into an open upstream workflow:
 
 1. ingest public evidence
-2. summarize recent project activity
-3. flag weak signals
-4. hand off to human reviewers
+2. normalize recent project activity into structured signals
+3. emit weak/medium/strong portfolio snapshots
+4. feed downstream review tools or human workflows
 
 This is useful for GCC, but also reusable for any public grant program.
 
